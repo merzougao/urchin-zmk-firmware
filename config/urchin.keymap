@@ -68,7 +68,7 @@
             bindings = <
 &kp GRAVE   &kp TAB        &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &trans  &trans  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp BACKSPACE  &kp ASTRK
 &skq LCTRL  &skq LEFT_ALT  &skq LEFT_SHIFT   &skq LEFT_GUI      &trans  &trans  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS      &kp BACKSLASH
-&none       &none          &sl 4             &sl 3              &trans  &trans  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp UNDER      &kp DOLLAR
+&sl 3       &kp EQUAL      &sl 4             &kp PIPE           &trans  &trans  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp UNDER      &kp DOLLAR
                                              &trans             &trans  &trans  &trans
             >;
         };
@@ -81,9 +81,9 @@
             //                        |      |     |   |      |     |
 
             bindings = <
-&kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans  &mkp LCLK  &mmv MOVE_DOWN  &mmv MOVE_UP  &trans     &trans
-&sk LCTRL          &sk LEFT_ALT     &caps_word            &sk LEFT_GUI          &trans  &kp LEFT   &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT  &trans
-&to 5              &trans           &mmv MOVE_LEFT        &mmv MOVE_RIGHT       &trans  &trans     &trans          &trans        &trans     &bootloader
+&kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans  &mkp LCLK  &mmv MOVE_DOWN  &mmv MOVE_UP  &trans    &trans
+&sk LCTRL          &sk LEFT_ALT     &caps_word            &sk LEFT_GUI          &trans  &trans     &kp LEFT        &kp UP_ARROW  &kp DOWN  &kp RIGHT
+&to 5              &trans           &mmv MOVE_LEFT        &mmv MOVE_RIGHT       &trans  &trans     &trans          &trans        &trans    &bootloader
                                                           &trans                &trans  &trans     &trans
             >;
         };
@@ -111,9 +111,9 @@
             //                   |     |     |   |     |     |
 
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &kp AT     &kp EXCL     &kp LESS_THAN  &kp GREATER_THAN
-&trans  &trans  &trans  &trans  &trans  &trans  &kp EQUAL  &kp AMPS     &kp PLUS       &kp TILDE
-&trans  &trans  &trans  &trans  &trans  &trans  &kp POUND  &kp PERCENT  &kp CARET      &kp PIPE
+&trans  &trans  &trans  &trans  &trans  &trans  &kp LESS_THAN  &kp GREATER_THAN  &kp AT     &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &kp AMPS       &kp EXCL          &kp PLUS   &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &kp POUND      &kp PERCENT       &kp CARET  &kp TILDE
                         &trans  &trans  &trans  &trans
             >;
         };
