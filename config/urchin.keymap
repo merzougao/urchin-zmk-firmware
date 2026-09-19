@@ -81,10 +81,10 @@
             //                        |      |     |   |      |     |
 
             bindings = <
-&kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans  &mkp LCLK  &mmv MOVE_DOWN  &mmv MOVE_UP  &trans    &trans
-&sk LCTRL          &sk LEFT_ALT     &caps_word            &sk LEFT_GUI          &trans  &trans     &kp LEFT        &kp UP_ARROW  &kp DOWN  &kp RIGHT
-&to 5              &trans           &mmv MOVE_LEFT        &mmv MOVE_RIGHT       &trans  &trans     &trans          &trans        &trans    &bootloader
-                                                          &trans                &trans  &trans     &trans
+&kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans  &mkp LCLK       &mmv MOVE_DOWN  &mmv MOVE_UP  &trans     &trans
+&sk LCTRL          &sk LEFT_ALT     &caps_word            &sk LEFT_GUI          &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT  &trans
+&to 5              &trans           &mmv MOVE_LEFT        &mmv MOVE_RIGHT       &trans  &trans          &trans          &trans        &trans     &bootloader
+                                                          &trans                &trans  &trans          &trans
             >;
         };
 
