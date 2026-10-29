@@ -69,7 +69,7 @@
             bindings = <
 &kp GRAVE   &kp TAB        &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &trans  &trans  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp BACKSPACE  &kp ASTRK
 &skq LCTRL  &skq LEFT_ALT  &skq LEFT_SHIFT   &skq LEFT_GUI      &trans  &trans  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS      &kp BACKSLASH
-&sl 3       &kp EQUAL      &sl 4             &kp PIPE           &trans  &trans  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp UNDER      &kp DOLLAR
+&kp PIPE    &kp EQUAL      &sl 4             &sl 3              &trans  &trans  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp UNDER      &kp DOLLAR
                                              &trans             &trans  &trans  &trans
             >;
         };
@@ -84,8 +84,8 @@
             bindings = <
 &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans  &trans  &trans          &trans          &trans        &trans
 &sk LCTRL          &sk LEFT_ALT     &sk LEFT_SHIFT        &sk LEFT_GUI          &trans  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT
-&to 5              &trans           &mkp LCLK             &caps_word            &trans  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT
-                                                          &trans                &trans  &trans  &trans
+&trans             &trans           &mkp LCLK             &caps_word            &trans  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT
+                                                          &trans                &trans  &to 5   &trans
             >;
         };
 
@@ -130,10 +130,10 @@
 
         gaming2 {
             bindings = <
-&kp TAB  &kp N1  &kp N2  &kp N3  &none   &none  &none  &none  &none  &none
-&none    &kp N4  &kp N5  &kp N6  &kp N0  &none  &none  &none  &none  &none
-&to 0    &kp N7  &kp N8  &kp N9  &none   &none  &none  &none  &none  &none
-                         &none   &none   &none  &none
+&kp TAB       &kp N1  &kp N2  &kp N3  &none   &none  &none  &none  &none  &none
+&none         &kp N4  &kp N5  &kp N6  &kp N0  &none  &none  &none  &none  &none
+&kp LEFT_ALT  &kp N7  &kp N8  &kp N9  &none   &none  &none  &none  &none  &none
+                              &none   &none   &to 0  &none
             >;
         };
     };
