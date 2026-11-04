@@ -24,11 +24,10 @@
 
         shift_caps_word: shift_caps_word {
             compatible = "zmk,behavior-hold-tap";
-            label = "SHIFT_CAPS_WORD";
             #binding-cells = <2>;
             bindings = <&kp>, <&caps_word>;
 
-            tapping-term-ms = <100>;
+            tapping-term-ms = <200>;
             flavor = "balanced";
         };
     };
