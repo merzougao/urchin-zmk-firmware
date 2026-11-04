@@ -13,22 +13,6 @@
 
 / {
     behaviors {
-        comma_semi: comma_semi_morph {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp COMMA>, <&kp SEMI>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        dot_colon: dot_colon_morph {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp DOT>, <&kp COLON>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
         skq: sticky_key_quick_release {
             compatible = "zmk,behavior-sticky-key";
             #binding-cells = <1>;
@@ -36,6 +20,16 @@
             release-after-ms = <1000>;
             quick-release;
             ignore-modifiers;
+        };
+
+        shift_caps_word: shift_caps_word {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SHIFT_CAPS_WORD";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&caps_word>;
+
+            tapping-term-ms = <100>;
+            flavor = "balanced";
         };
     };
 
@@ -52,9 +46,9 @@
             //                   | SYM | NAV |   | ESC | SPC |
 
             bindings = <
-&kp B  &kp L  &kp D  &kp C  &kp V  &kp J       &kp F      &kp O        &kp U       &kp RET
-&kp N  &kp R  &kp T  &kp S  &kp G  &kp Y       &kp H      &kp A        &kp E       &kp I
-&kp X  &kp Q  &kp M  &kp W  &kp Z  &kp K       &kp P      &comma_semi  &dot_colon  &kp SLASH
+&kp B  &kp L  &kp D  &kp C  &kp V  &kp J       &kp F      &kp O      &kp U    &kp RET
+&kp N  &kp R  &kp T  &kp S  &kp G  &kp Y       &kp H      &kp A      &kp E    &kp I
+&kp X  &kp Q  &kp M  &kp W  &kp Z  &kp K       &kp P      &kp COMMA  &kp DOT  &kp SLASH
                      &sl 1  &mo 2  &kp ESCAPE  &kp SPACE
             >;
         };
@@ -67,10 +61,10 @@
             //                       |      |     |   |     |     |
 
             bindings = <
-&kp GRAVE   &kp TAB        &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &trans         &trans            &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp BACKSPACE  &kp ASTRK
-&skq LCTRL  &skq LEFT_ALT  &skq LEFT_SHIFT   &skq LEFT_GUI      &kp LESS_THAN  &kp GREATER_THAN  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS      &kp BACKSLASH
-&kp PIPE    &kp EQUAL      &sl 4             &sl 3              &trans         &trans            &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp UNDER      &kp DOLLAR
-                                             &trans             &trans         &trans            &trans
+&kp GRAVE   &kp TAB        &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &kp LESS_THAN    &kp GREATER_THAN  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp BACKSPACE  &kp ASTRK
+&skq LCTRL  &skq LEFT_ALT  &skq LEFT_SHIFT   &skq LEFT_GUI      &kp SEMI         &kp COLON         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS      &kp BACKSLASH
+&kp PIPE    &kp EQUAL      &sl 4             &sl 3              &kp EXCLAMATION  &kp PLUS          &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp UNDER      &kp DOLLAR
+                                             &trans             &trans           &trans            &trans
             >;
         };
 
@@ -82,10 +76,10 @@
             //                        |      |     |   |      |     |
 
             bindings = <
-&kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans  &trans  &trans          &trans          &trans        &trans
-&sk LCTRL          &sk LEFT_ALT     &sk LEFT_SHIFT        &sk LEFT_GUI          &trans  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT
-&trans             &trans           &caps_word            &mkp LCLK             &trans  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT
-                                                          &trans                &trans  &to 5   &trans
+&kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_BRIGHTNESS_DEC           &kp C_BRIGHTNESS_INC  &trans  &trans  &trans          &trans          &trans        &trans
+&sk LCTRL          &sk LEFT_ALT     &shift_caps_word LEFT_SHIFT 0  &sk LEFT_GUI          &trans  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT
+&trans             &trans           &caps_word                     &mkp LCLK             &trans  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT
+                                                                   &trans                &trans  &to 5   &trans
             >;
         };
 
@@ -112,8 +106,8 @@
             //                   |     |     |   |     |     |
 
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &trans  &trans  &trans     &trans       &kp AT     &trans
-&trans        &trans        &trans        &trans        &trans  &trans  &kp AMPS   &kp EXCL     &kp PLUS   &trans
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &trans  &trans  &trans     &trans       &trans     &trans
+&trans        &trans        &trans        &trans        &trans  &trans  &kp AMPS   &kp AT       &kp PLUS   &trans
 &trans        &trans        &trans        &trans        &trans  &trans  &kp POUND  &kp PERCENT  &kp CARET  &kp TILDE
                                           &trans        &trans  &trans  &trans
             >;
